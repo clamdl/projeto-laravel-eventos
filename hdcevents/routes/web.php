@@ -16,16 +16,10 @@ use App\Http\Controllers\EventController;
 
 Route::get('/', [EventController::class, 'index']);
 
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create'])->name('create');;
 
-Route::get('/contatos', function () {
+Route::post('/events', [EventController::class, 'store'])->name('events');
+
+Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/produtos', function () {
-    return view('products');
-});
-
-Route::get('/produto/{id}', function ($id) {
-    return view('product', ['id' => $id]);
 });
