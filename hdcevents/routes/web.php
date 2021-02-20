@@ -22,6 +22,8 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 
 Route::post('/events', [EventController::class, 'store'])->name('events');
 
+Route::delete('/events/{id}', [EventController::class, 'destroy']);
+
 Route::get('/contact', function () {
     return view('contact');
 });
